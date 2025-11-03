@@ -6,6 +6,11 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
@@ -13,10 +18,22 @@
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+:root {
+	--font-display: "Italiana", sans-serif;
+	--font-body: "Montserrat", sans-serif;
+	scroll-behavior: smooth;
+}
+body {
+	/* background-image: url(background.jpg); */
+	background-size: cover;
+	font-family: var(--font-body) ;
+	font-size: 20px;
+	color: rgb(0, 0, 0);
+	margin-left: 10rem;
+	margin-right: 10rem;
+	background-color: #e8dcca;
+
+}
+
+
 </style>

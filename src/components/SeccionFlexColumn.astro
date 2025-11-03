@@ -1,0 +1,45 @@
+---
+
+const { subtitulo, descripcion, contenido, img } = Astro.props;
+---
+
+<section class="section">
+    <h2 class="subtitle" >{subtitulo}</h2>
+    <img class="biografia__image" src={img} />
+    <div class="descripcion">
+        <p>{descripcion}</p>
+    </div>
+    
+    <div class="contenido">
+        {contenido}
+    </div>
+</section>
+
+<style>
+    .section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 6rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subtitle {
+        color: #2167a1;;
+        font-weight: bold;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        text-transform: uppercase;
+        justify-self: center;
+    }
+
+    .biografia__image {
+    max-width:  25rem;
+    border-radius: 20%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+</style>

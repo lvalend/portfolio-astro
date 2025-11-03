@@ -1,11 +1,75 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Menu from '../components/Menu.astro';
+import Header from '../components/Header.astro';
+import SeccionFlexColumn from '../components/SeccionFlexColumn.astro';
+import ConocimientosFlex from '../components/ConocimientosFlex.astro';
+import Formulario from '../components/Formulario.astro';
+import TrabajosNota from '../components/TrabajosNota.astro';
+import ConocimientoItems from '../components/ConocimientoItems.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<h1 class="h1-oculto">Portfolio Valentina Delgado</h1>
+	<Menu>
+	</Menu>
+	<Header>
+	</Header>
+	<SeccionFlexColumn subtitulo="Sobre mí" src="src\assets\sobre-mi.jpg" descripcion="Soy una diseñadora gráfica con dos años de experiencia diseñando e imprimiendo diversas piezas para empresas y emprendimientos. Me encuentro estudiando la Licenciatura en Artes Electronicas en la UNTREF, carrera que propone el encuentro entre la ciencia, el arte y la tecnologia en la produccion y creacion de obras. Poseo conocimiento sobre marketing digital y comercio electrónico, para que cada proyecto pueda nutrirse de una visión más amplia y conseguir los mejores resultados." img="public/sobre-mi.jpg">
+	</SeccionFlexColumn>
+	<ConocimientosFlex>
+		<ConocimientoItems img="../public/coreldraw.png" titulo="Corel Draw" descripcion="Diseño vectorial y creación de ilustraciones digitales." clase="sobremi__conocimientos-flex__foto-size"/>
+		</ConocimientoItems>
+		<ConocimientoItems img="../public/adobe-ps.png" titulo="Adobe Photoshop" descripcion="Edición y retoque de imágenes." clase="sobremi__conocimientos-flex__foto-size"/>
+		</ConocimientoItems>
+		<ConocimientoItems img="../public/educacionit-logo.png" titulo="Cursos" descripcion="Diseño vectorial y creación de ilustraciones digitales." clase="sobremi__conocimientos-flex__foto-size"/>
+		</ConocimientoItems>
+		<ConocimientoItems img="../public/untref-logo.svg" titulo="Licenciatura en Artes Electronicas" clase="sobremi__conocimientos-flex__foto-size agrandar"/>
+		</ConocimientoItems>
+		<ConocimientoItems img="../ef-set.png" titulo="EF SET English Certificate" descripcion="76/100 (C2 Proficient)" clase="sobremi__conocimientos-flex__foto-size agrandar"/>
+	</ConocimientoItems>
+	</SeccionFlexColumn>
+
+
+	</ConocimientosFlex>
+	<SeccionFlexColumn subtitulo="Mis trabajos">
+	</SeccionFlexColumn>
+	<div class="trabajos__contenedor">
+		<TrabajosNota titulo="Obras" descripcion="Exploración artística utilizando diferentes medios y materiales.">
+	</TrabajosNota>
+	<TrabajosNota titulo="Diseño Gráfico" descripcion="Creación de piezas visuales para comunicación y marketing, adaptadas a las necesidades del cliente.">
+	</TrabajosNota>
+	<TrabajosNota titulo="Redes Sociales" descripcion="Gestión y creación de contenido para plataformas digitales, enfocada en aumentar la visibilidad y el engagement.">
+	</TrabajosNota>
+</div>
+	<SeccionFlexColumn subtitulo="Trabajemos juntos" descripcion="Tengo la agenda abierta para nuevas ofertas y proyectos! Si estas interesado en que trabajemos tu idea podes llenar el siguiente formulario y nos ponemos en contacto:">
+
+	</SeccionFlexColumn>
+			<Formulario>
+		</Formulario>
 </Layout>
+<style>
+
+	.h1-oculto {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.trabajos__contenedor {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+</style>
