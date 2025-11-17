@@ -1,14 +1,20 @@
-      <nav class="menu">
-        <ul class="menu__opciones">
-          <li class="menu-item"><a class="menu-item"href="#sobremi">Sobre Mi</a></li>
-          <li ><a href="#mis-trabajos" class="menu-item">Trabajos</a></li>
-          <li ><a class="menu-item" href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      </div>
+---
+import SeccionFlexColumn from "./SeccionFlexColumn.astro";
+import type MenuHamburguesa from "./MenuHamburguesa.astro";
+---
 
-      <style>
-        .menu__opciones {
+<nav class="menu-barra">
+  <ul class="menu__opciones">
+    <li><a class="menu-item" href="#sobre-mi">Sobre Mi</a></li>
+    <li>
+      <a href="#mis-trabajos" class="menu-item">Trabajos</a>
+    </li>
+    <li><a class="menu-item" href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<style>
+  .menu__opciones {
     position: fixed;
     z-index: 1000;
     top: 2rem;
@@ -24,28 +30,64 @@
     margin-top: 2rem;
     font-weight: 500;
     /* centrar el contenedor y sus items */
-    margin: auto;      /* centra el contenedor horizontalmente */
+    margin: auto; /* centra el contenedor horizontalmente */
     padding: 0 0.5rem; /* corregido */
     justify-content: center; /* centra los .menu-item dentro del contenedor */
     width: 30rem;
     height: 3rem;
-    align-items: center;    /* centra verticalmente los .menu-item */
-}
+    align-items: center; /* centra verticalmente los .menu-item */
+  }
 
-.menu-toggle-checkbox {
+  .menu-toggle-checkbox {
     display: none;
-}
+  }
 
+  .menu-item {
+    color: #303030;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 
-.menu-item {
-        color:#303030;
-        text-decoration: none;
-        text-transform: uppercase;
-}
-
-.menu-item:hover {
+  .menu-item:hover {
     color: #000;
     transition: color 500ms ease-in-out;
-}
+  }
 
-      </style>
+  @media only screen and (max-width: 1200px) {
+    .menu__opciones {
+      width: fit-content;
+      align-items: center;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+    }
+
+    .menu-item {
+      color: #303030;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .menu-toggle {
+      display: none;
+    }
+    .menu__opciones {
+      width: fit-content;
+      align-items: center;
+    }
+
+    .menu-item {
+      color: #303030;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .menu-barra {
+      display: none;
+    }
+  }
+</style>

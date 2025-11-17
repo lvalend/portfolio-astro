@@ -1,49 +1,54 @@
-<form action="/procesar-datos" method="post">
+<form action="https://api.web3forms.com/submit" method="POST">
     <div class="form">
-      <div class="form__campo">
-        <label for="nombre">Nombre:</label>
-        <input class="form__input" type="text" id="nombre" name="nombre" required>
-    </div>
-
-    <div class="form__campo">
+        
+        <input
+            type="hidden"
+            name="access_key"
+            value="76033996-645f-4711-9b1d-682a96de9af0"
+        />
+        <div class="form__campo">
+        <label for="name">Nombre:</label>
+        <input class="form__input" type="text" id="name" name="name" required />
+        </div>
+        <div class="form__campo">
         <label for="email">Correo electrónico:</label>
-        <input class="form__input" type="email" id="email" name="email" required>
-    </div>
-
-    <div class="form__campo">
+        <input class="form__input" type="email" id="email" name="email" required />
+        </div>
+        <div class="form__campo">
         <label for="mensaje">Mensaje:</label>
-        <textarea class="form__input" id="mensaje" name="mensaje" rows="4"></textarea>
+        <textarea class="form__input" id="mensaje"name="message"  rows="4" required></textarea>
+        </div>
+        <slot></slot>
     </div>
-</div>
-    <button class="boton enviar" type="submit">Enviar</button>
 </form>
 
-<style>
-    
-.form__campo{
-     max-width: 52rem;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-}
+    <style>
+        .form__campo {
+            max-width: 52rem;
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
 
-.form__input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    margin-top: 0.5rem;
-}
+        .form__input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+            margin-top: 0.5rem;
+        }
 
-.enviar {
-    background-color: #2167a1;
-    color: #fff;
-        margin-top: 2.5rem;
-}
-.enviar:hover {
-    background-color: #174a6f;
-    transition: background-color 500ms ease-in-out;
-}
+        .enviar {
+            background-color: #2167a1;
+            color: #fff;
+            margin-top: 2.5rem;
+        }
+        .enviar:hover {
+            background-color: #174a6f;
+            transition: background-color 500ms ease-in-out;
+        }
+    </style>
+</form>

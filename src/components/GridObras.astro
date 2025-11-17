@@ -1,0 +1,42 @@
+
+<div class="obras">
+  <slot />
+</div>
+<style>
+  .obras {
+    padding-top: 8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  /* sm -> 640px */
+  @media (width >= 40rem) {
+    .obras {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* md -> 768px */
+  @media (width >= 48rem) {
+    .obras {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  /* lg -> 1024px */
+  @media (width >= 64rem) {
+    
+  }
+
+  /* xl -> 1280px */
+  @media (width >= 80rem) {
+    .obras {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  /* 2xl -> 1536px */
+  @media (width >= 96rem) {
+
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Menu from '../components/Menu.astro';
+import MenuHamburguesa from '../components/MenuHamburguesa.astro';
+import GridObras from '../components/GridObras.astro';
+import CardObra from '../components/CardObra.astro';
+import GoBack from '../components/goback.astro';
+---
+<Layout>
+<body>
+    <GoBack></GoBack>
+<GridObras>
+    <CardObra imagen="../public/bratz.jpg" alttext="obra hecha de cobre, chatarra electronica y silicona, inspirada en una neurona" titulo="Backup Mnemico" descripcion="Backup mnémico pretende ser un dispositivo que funciona como una copia de seguridad de la memoria a largo plazo. Refuerza el vínculo entre tecnología y psicología, conectando ambos ámbitos con la idea de cyborg."
+    ></CardObra>
+    <CardObra imagen="../public/mediodia.png" alttext="ilustracion digital"
+    titulo="Mediodia" descripcion="Primer trabajo realizado en la carrera. Mezclando el sonido e ilustraciones digitales, represente 12 horas de mi dia a dia">  </CardObra>
+    <CardObra imagen="../public/escultura.jpg" altext="escultura de vidrio, alambre, madera y macilla" titulo="Escultura de vidrio y cobre" descripcion="Escultura realizada con cobre y vidrio"></CardObra>
+    <CardObra imagen="../public/puckman.jpeg" altext="estructura construida de carton que imita la estetica de un juego retro de pacman" titulo="Puck Man" descripcion="Obra interactiva"></CardObra>
+</GridObras>
+</body>
+</Layout>

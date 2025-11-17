@@ -1,0 +1,143 @@
+---
+import Menu from "./Menu.astro"
+---
+
+<div class="menu-toggle">
+    <input type="checkbox" id="menu-toggle-checkbox" />
+    <label for="menu-toggle-checkbox" class="hamburger"></label>
+    <nav class="menu">
+        <ul>
+            <li><a href="#sobre-mi">Sobre Mi</a></li>
+            <li><a href="#mis-trabajos">Trabajos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+.menu-toggle{
+	display: none;
+}
+
+    
+	@media only screen and (max-width: 1200px) {
+        .menu-toggle{
+            display: none;
+        }
+    }
+	@media only screen and (max-width: 992px) {
+        .menu-toggle{
+            display:none;
+        }}
+    @media only screen and (max-width: 768px) {
+            .menu-toggle input[type="checkbox"] {
+        display: none; /* Oculta el checkbox */
+    }
+
+    .menu-toggle {
+        background: #d2ceccf0;
+        height: 50px;
+        max-width: 768px;
+        width: 100%;
+        display: flex;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+    }
+    .hamburger {
+        display: block;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        width: 30px;
+        height: 2px;
+        background-color: #333;
+        position: relative;
+
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Para crear las otras dos líneas del icono */
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+
+        background-color: #333;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger::before {
+        top: 8px;
+    }
+
+    .hamburger::after {
+        top: 16px;
+    }
+
+    .menu {
+        display: flex; /* Opcional, para alinear elementos en el menú */
+        position: fixed; /* O cambiar a absolute si es necesario */
+
+        margin-top: 50px;
+        left: 0;
+        width: 50%;
+        height: max-content;
+        background-color: #d2ceccf0;
+        z-index: 100;
+
+        transition: transform 0.3s ease;
+        visibility: hidden; /* Opcional, para un mejor efecto */
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .menu ul li {
+        margin: 1em;
+    }
+
+    .menu ul li a {
+        text-transform: uppercase;
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    /* Estilo cuando el checkbox está marcado */
+    .menu-toggle input[type="checkbox"]:checked ~ .menu {
+        transform: translateX(0); /* Muestra el menú */
+        visibility: visible;
+    }
+
+    /* Opcional: Cambiar el icono a una X */
+    .menu-toggle input[type="checkbox"]:checked ~ .hamburger {
+        background-color: transparent;
+
+        transform: rotate(60deg) translate(8px, -10px);
+    }
+
+    .menu-toggle input[type="checkbox"]:checked ~ .hamburger::before {
+        transform: rotate(60deg) translate(8px, 5px);
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .menu-toggle{           
+         max-width:600px;
+        width: 100%;
+
+}}
+
+
+</style>

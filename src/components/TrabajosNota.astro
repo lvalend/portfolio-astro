@@ -1,59 +1,106 @@
 ---
 
-const { titulo, descripcion} = Astro.props;
+const {direc,titulo, descripcion} = Astro.props;
 ---
-        <div class="trabajo_cuadrado">
+        <div class="trabajo_cuadrado"><a href={direc}>
           <img src="../public/papel.png" class="papel">
           <h3 class="trabajo-contenedor__title">{titulo}</h3> 
           <div class="trabajo-contenedor__texto">
             <p>{descripcion}</p>
           </div>
+          </a>
         </div>
 <style>
-    
+/* ----------------------------------------------------- */
+/* --- ESTILOS GENERALES Y LAYOUT --- */
+/* (Sin cambios en esta sección) */
+/* ----------------------------------------------------- */
 .trabajo_cuadrado {
     width: 500px;
     height: 400px;
     position: relative;
     gap: 1rem;
-    /* border: 6px solid #977cb375;
-       border-radius: 20%; */
+    overflow: hidden; 
+    cursor: pointer; 
 }
 
+.trabajo_cuadrado a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+}
 
-.papel{
+/* ----------------------------------------------------- */
+/* --- IMAGEN Y EFECTO HOVER (Énfasis en Rotación) --- */
+/* ----------------------------------------------------- */
+.papel {
     position: absolute;
     width: 480px;
     height: auto;
     z-index: -1;
-      position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    
+    /* Aumentamos el tiempo de transición para que se vea la rotación */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.3s ease-out;
 }
 
-.trabajo-contenedor__title{
-font-family: "Reenie Beanie", cursive;
-font-size: 4rem;
-font-weight: normal;
-color: #303030;
-align-self: center;
-justify-self: center;
-padding-top: 2rem;
+/* EFECTO HOVER: Movimiento de rotación principal */
+.trabajo_cuadrado:hover .papel {
+    /* Rotación de 2 grados y un leve escalado para profundidad */
+    transform: rotate(-2deg) scale(1.03); 
+    filter: brightness(1.1); 
+}
+
+/* ----------------------------------------------------- */
+/* --- EFECTO HOVER EN EL TEXTO --- */
+/* ----------------------------------------------------- */
+
+.trabajo-contenedor__title,
+.trabajo-contenedor__texto {
+    /* Añadimos transición para que el cambio de color sea suave */
+    transition: color 0.3s ease-out, transform 0.3s ease-out; 
+}
+
+.trabajo-contenedor__title {
+    font-family: "Reenie Beanie", cursive;
+    font-size: 4rem;
+    font-weight: normal;
+    color: #303030;
+    align-self: center;
+    margin: 0 0 auto;
+    padding-top: 6rem;
     text-align: center;
-    max-width: 22rem;
     margin-bottom: 0;
+}
 
+/* NUEVO: Efecto en el Título al hacer hover */
+.trabajo_cuadrado:hover .trabajo-contenedor__title {
+    color: #2d89d4
+; /* Cambia a un color diferente (morado sugerido) */
+    transform: translateY(-5px); /* Se mueve ligeramente hacia arriba */
 }
 
 
-.trabajo-contenedor__texto{
+.trabajo-contenedor__texto {
     font-size: 1.2rem;
     color: #303030;
     text-align: center;
     max-width: 22rem;
     margin: 0 auto;
 }
+
+/* NUEVO: Efecto en el Texto al hacer hover */
+.trabajo_cuadrado:hover .trabajo-contenedor__texto {
+    color: #6a6a6a; /* Se vuelve un poco más oscuro o claro */
+}
+
+/* ----------------------------------------------------- */
+/* --- OTROS ESTILOS (Sin cambios) --- */
+/* ----------------------------------------------------- */
 .trabajo__obras-link {
     color: #000;
     text-decoration: none;
@@ -61,5 +108,7 @@ padding-top: 2rem;
     margin-top: 1rem;
     display: inline-block;
 }
-
+  @media only screen and (max-width: 768px) {
+    
+  }
 </style>

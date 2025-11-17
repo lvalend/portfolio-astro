@@ -1,3 +1,6 @@
+---
+import MenuHamburguesa from "../components/MenuHamburguesa.astro"
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,11 +9,20 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Italiana&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<slot />
@@ -18,22 +30,322 @@
 </html>
 
 <style>
-:root {
-	--font-display: "Italiana", sans-serif;
-	--font-body: "Montserrat", sans-serif;
-	scroll-behavior: smooth;
-}
-body {
-	/* background-image: url(background.jpg); */
-	background-size: cover;
-	font-family: var(--font-body) ;
-	font-size: 20px;
-	color: rgb(0, 0, 0);
-	margin-left: 10rem;
-	margin-right: 10rem;
-	background-color: #e8dcca;
+	:root {
+		--font-display: "Italiana", sans-serif;
+		--font-body: "Montserrat", sans-serif;
+		scroll-behavior: smooth;
+	}
+	body {
+		/* background-image: url(background.jpg); */
+		background-size: cover;
+		font-family: var(--font-body);
+		font-size: 20px;
+		color: rgb(0, 0, 0);
+		margin-left: 14rem;
+		margin-right: 14rem;
+		background-color: #e8dcca;
+	}
+	.boton {
+		display: block;
+		background-color: #2167a1;
+		color: rgb(255, 255, 255);
+		border: #2167a1;
+		border-radius: 2rem;
+		padding: 1rem 2rem;
+		margin: 4rem auto;
+		font-size: 1rem;
+		text-transform: uppercase;
+		align-self: center;
 
-}
+		cursor: pointer;
+	}
+
+	@media only screen and (max-width: 1200px) {
+
+		body {
+			margin: 0 auto;
+			max-width: 1200px;
+			width: 80%;
+			font-size: 1.3rem;
+		}
 
 
+		.subtitle {
+			margin-top: 5rem;
+			font-size: 4.5rem;
+			line-height: 4rem;
+			text-align: center;
+		}
+		.biografia__image {
+			max-width: 400px;
+		}
+		.sobremi__texto {
+			width: 98%;
+			line-height: 1.4;
+			margin: 0 auto;
+		}
+
+		.intro__img {
+			max-width: 1200px;
+			width: 99%;
+
+			align-self: center;
+		}
+		.intro__title {
+			font-size: 7rem;
+		}
+		.contenedor__conocimientos-flex-fotos {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			column-gap: 3rem;
+		}
+
+		.trabajo_contenedor {
+			flex-wrap: wrap;
+			max-width: 1200px;
+			column-gap: 5rem;
+			row-gap: 2rem;
+		}
+		.trabajo_cuadrado {
+			width: 400px;
+			height: 350px;
+		}
+		.papel {
+			margin: 0 auto;
+			width: 400px;
+		}
+		.boton.empecemos {
+			display: none;
+		}
+		.formulario__descripcion {
+		}
+	}
+
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media only screen and (max-width: 992px) {
+		body {
+			margin: 0 auto;
+			max-width: 992px;
+			width: 80%;
+			font-size: 1.4rem;
+		}
+
+
+
+		.subtitle {
+			margin-top: 5rem;
+			font-size: 4rem;
+			line-height: 4rem;
+			text-align: center;
+		}
+		.biografia__image {
+			max-width: 400px;
+		}
+		.sobremi__texto {
+			width: 100%;
+		}
+
+		.intro__img {
+			max-width: 700px;
+			width: 99%;
+
+			align-self: center;
+		}
+		.intro__title {
+			font-size: 5rem;
+		}
+		.contenedor__conocimientos-flex-fotos {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			column-gap: 3rem;
+		}
+
+		.trabajo_contenedor {
+			max-width: 992px;
+			gap: 6rem;
+		}
+		.trabajo_cuadrado {
+			width: 700px;
+			height: 680px;
+		}
+		.papel {
+			margin: 0 auto;
+			width: 700px;
+			justify-self: center;
+		}
+		.boton.empecemos {
+			display: none;
+		}
+		.formulario__descripcion {
+			width: 100%;
+			line-height: 3rem;
+		}
+
+		.trabajo-contenedor__title {
+			padding-top: 8rem;
+		}
+	}
+
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (max-width: 768px) {
+		body {
+			margin: 0 auto;
+			max-width: 768px;
+			width: 80%;
+			font-size: 1.2rem;
+		}
+		.menu-navegacion__estandar {
+			display: none;
+		}
+
+		.menu-toggle input[type="checkbox"] {
+			display: none; /* Oculta el checkbox */
+		}
+
+		.menu-toggle {
+			background: #d2ceccf0;
+			height: 50px;
+			max-width: 768px;
+			width: 100%;
+			display: flex;
+			position: fixed;
+			z-index: 1000;
+			left: 0;
+		}
+		.hamburger {
+			display: block;
+			margin-left: 1rem;
+			margin-top: 1rem;
+			width: 30px;
+			height: 2px;
+			background-color: #333;
+			position: relative;
+
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		/* Para crear las otras dos líneas del icono */
+		.hamburger::before,
+		.hamburger::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+
+			background-color: #333;
+			position: absolute;
+			transition: all 0.3s ease;
+		}
+
+		.hamburger::before {
+			top: 8px;
+		}
+
+		.hamburger::after {
+			top: 16px;
+		}
+
+		.menu {
+			display: flex; /* Opcional, para alinear elementos en el menú */
+			position: fixed; /* O cambiar a absolute si es necesario */
+
+			margin-top: 50px;
+			left: 0;
+			width: 50%;
+			height: max-content;
+			background-color: #d2ceccf0;
+			z-index: 100;
+
+			transition: transform 0.3s ease;
+			visibility: hidden; /* Opcional, para un mejor efecto */
+		}
+
+		.menu ul {
+			list-style: none;
+			padding: 0;
+			margin-top: 0.5rem;
+			margin-left: 0.5rem;
+			text-align: left;
+			font-size: 1rem;
+		}
+
+		.menu ul li {
+			margin: 1em;
+		}
+
+		.menu ul li a {
+			text-transform: uppercase;
+			color: #000000;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 1.2rem;
+			font-weight: 500;
+		}
+
+		/* Estilo cuando el checkbox está marcado */
+		.menu-toggle input[type="checkbox"]:checked ~ .menu {
+			transform: translateX(0); /* Muestra el menú */
+			visibility: visible;
+		}
+
+		/* Opcional: Cambiar el icono a una X */
+		.menu-toggle input[type="checkbox"]:checked ~ .hamburger {
+			background-color: transparent;
+
+			transform: rotate(60deg) translate(8px, -10px);
+		}
+
+		.menu-toggle input[type="checkbox"]:checked ~ .hamburger::before {
+			transform: rotate(60deg) translate(8px, 5px);
+		}
+
+		.subtitle {
+			font-size: 3rem;
+			line-height: 3rem;
+			text-align: center;
+		}
+		.biografia__image {
+			max-width: 400px;
+		}
+		.sobremi__texto {
+			width: 100%;
+		}
+
+		.intro__img {
+			max-width: 700px;
+			width: 99%;
+
+			align-self: center;
+		}
+		.intro__title {
+			font-size: 4.5rem;
+		}
+		.contenedor__conocimientos-flex-fotos {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			column-gap: 3rem;
+		}
+		.trabajo_contenedor {
+			max-width: 768px;
+			width: 95%;
+		}
+		.papel {
+			width: 100%;
+		}
+		.boton.empecemos {
+			display: none;
+		}
+		.formulario__descripcion {
+			width: 100%;
+			line-height: 1.5rem;
+		}
+
+		.trabajo-contenedor__title {
+			padding-top: 8rem;
+		}
+	}
 </style>
